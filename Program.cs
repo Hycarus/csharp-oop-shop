@@ -4,7 +4,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Product libro = new Product("LOTR", "Un capolavoro, non serve aggiungere altro", 23.50, 23);
+        Console.WriteLine($"Il prezzo complessivo di IVA è {libro.priceWithIVA()}");
+        Console.WriteLine($"Il nome esteso del libro è {libro.extendedName()}");
+        Console.WriteLine($"Il codice formattato è {libro.fillCode(libro.Codice)}");
+
+        Product[] shop = new Product[3];
+        shop[0] = new Product("Frigorifero", "Raffredda", 399, 23);
+        shop[1] = new Product("Televisore", "Ci vedi le cose", 599, 23);
+        shop[2] = new Product("Tostapane", "Tosta-pane, cosa vuoi che faccia", 100, 23);
+
+        Console.WriteLine("\n\nProdotti presenti nel negozio:");
+        foreach(Product product in shop)
+        {
+            Console.WriteLine($"\nNome del prodotto: {product.extendedName()} \nCodice del prodotto: {product.fillCode(product.Codice)} \nDescrizione del prodotto: {product.Descrizione} \nPrezzo del prodotto: {product.priceWithIVA()} IVA al {product.Iva}% inclusa");
+        }
     }
 }
 
