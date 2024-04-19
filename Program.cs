@@ -19,6 +19,14 @@ class Program
         {
             Console.WriteLine($"\nNome del prodotto: {product.extendedName()} \nCodice del prodotto: {product.fillCode(product.Codice)} \nDescrizione del prodotto: {product.Descrizione} \nPrezzo del prodotto: {product.priceWithIVA()} IVA al {product.Iva}% inclusa");
         }
+
+        // Bonus LV1 del pomeriggio
+        Bonus bonus = new Bonus("Nome di prova", "Descrizione di prova", -10.50, -23);
+        Console.WriteLine("\n\nBonus LV1:");
+        Console.WriteLine($"IVA con controllo del valore negativo {bonus.Iva}");
+        Console.WriteLine($"Prezzo con il controllo del valore negativo {bonus.Prezzo}");
+        Console.WriteLine($"Prezzo con IVA e controllo del valore negativo applicato {bonus.priceWithIVA()}");
+
     }
 }
 
